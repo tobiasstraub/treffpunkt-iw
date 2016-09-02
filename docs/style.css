@@ -1,0 +1,81 @@
+body {
+margin:0 5px;
+padding:0 5px;
+font-family: "Open Sans", sans-serif;
+font-size:16px;
+color:#2F4F4F;
+}
+
+header {
+width:100%;
+}
+
+#logo-treffer {
+float:left;
+}
+
+#logo-hfu {
+float:right;
+}
+
+.top-line {
+background-color:#008854;
+height:3px;
+clear:both;
+}
+
+hr {
+border: 0;
+height: 0;
+border-top: 1px solid rgba(0, 0, 0, 0.1);
+border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+margin:0;
+padding:0;
+}
+
+h2 {
+margin:0;
+padding:0;
+}
+
+a:link, a:visited {
+border-bottom:1px solid rgba(52,73,94,0.4);
+text-decoration:none;
+color:#404d5b;
+}
+
+a:hover, a:active {
+border-bottom:1px solid rgba(52,73,94,1.0);
+text-decoration:none;
+color:#404d5b;
+}
+
+ul {
+list-style-type: square;
+}
+
+::-webkit-scrollbar-track
+{
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+width: 8px;
+background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+background-color: #008854;
+}
+
+#logo-bmbf {
+width:100%;
+text-align:right;
+}
