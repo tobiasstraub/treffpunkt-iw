@@ -1,0 +1,27 @@
+<!--
+## Aufgabe ##
+Erstellen Sie ein JavaScript Dokument, welches eine vom Benutzer
+eingegebene Zahl einliest. Entsprechend der vom Benutzer eingegebenen
+Zahl soll eine Folge von '*' ausgegeben werden. Nach je 40 Sternchen
+soll ein Zeilenumbruch erfolgen.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>TREFFpunkt 5: Aufgabe 1</title>
+  </head>
+  <body>
+    <div id="ausgabe"></div>
+    <script type="text/javascript">
+	var anzahlSternchen = prompt("Wie viele Sternchen sollen ausgegeben werden?","");
+	for(var i=0; i<anzahlSternchen; i++) {
+		if((i%40) == 0) {
+			document.getElementById('ausgabe').innerHTML += "<br>";
+		}
+		document.getElementById('ausgabe').innerHTML += "*";
+	}
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!--
+## Aufgabe ##
+Erstellen Sie ein HTML Dokument und binden Sie ein beliebiges Bild ein.
+Geben Sie mittels JavaScript eine Meldung (bspw. per alert) aus, sobald der
+Benutzer mit dem Mauszeiger über das Bild fährt. Geben Sie eine andere Meldung
+aus, sobald der Benutzer mit dem Mauszeiger das Bild wieder verlässt.
+Zudem soll beim Klick auf das Bild, die Hintergrundfarbe der Website rot werden.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>TREFFpunkt 6: Aufgabe 1</title>
+    <script type="text/javascript">
+    function alertMessage(message) {
+		  alert(message);
+		}
+	  function changeBackground() {
+		  document.body.style.background = 'red';
+	  }
+    </script>
+  </head>
+  <body>
+    <img src="my_image.jpg" width="100%" alt="Ein Foto"
+    onmouseover="alertMessage('Mauszeiger ist im Bild');"
+    onmouseout="alertMessage('Mauszeiger ist nicht mehr im Bild')"
+    onclick="changeBackground();">
+  </body>
+</html>

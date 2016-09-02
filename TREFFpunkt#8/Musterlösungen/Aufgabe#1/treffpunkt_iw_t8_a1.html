@@ -1,0 +1,46 @@
+<!--
+## Aufgabe ##
+Erstellen Sie ein Dokument mit zwei Eingabefeldern und jeweils einen
+Button für jede Grundrechenart. Bei Klick auf einen Button sollen die
+Ziffern in den beiden Eingabefeldern je nach angeklickter Grundrechenart
+addiert, subtrahiert, multipliziert oder dividiert werden. Das Ergebnis
+soll anschließend dem Benutzer angezeigt werden.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>TREFFpunkt 8: Aufgabe 1</title>
+    <script type="text/javascript">
+	function addieren() {
+           document.getElementById('ergebnis').innerHTML = parseInt(document.getElementById('zahl1').value) +
+                                                           parseInt(document.getElementById('zahl2').value);
+        }
+
+        function subtrahieren() {
+           document.getElementById('ergebnis').innerHTML = parseInt(document.getElementById('zahl1').value) -
+                                                           parseInt(document.getElementById('zahl2').value);
+        }
+
+        function multiplizieren() {
+           document.getElementById('ergebnis').innerHTML = parseInt(document.getElementById('zahl1').value) *
+                                                           parseInt(document.getElementById('zahl2').value);
+        }
+
+        function dividieren() {
+           document.getElementById('ergebnis').innerHTML = parseInt(document.getElementById('zahl1').value) /
+                                                           parseInt(document.getElementById('zahl2').value);
+        }
+    </script>
+  </head>
+  <body>
+    <form action="#" method="get">
+       <input type="text" id="zahl1"> <input type="text" id="zahl2"> = <span id="ergebnis"></span><br>
+       <button onclick="addieren()">Addieren</button>
+       <button onclick="subtrahieren()">Subtrahieren</button>
+       <button onclick="multiplizieren()">Multiplizieren</button>
+       <button onclick="dividieren()">Dividieren</button>
+    </form>
+  </body>
+</html>

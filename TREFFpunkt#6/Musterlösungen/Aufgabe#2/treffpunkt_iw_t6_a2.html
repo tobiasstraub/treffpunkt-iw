@@ -1,0 +1,35 @@
+<!--
+## Aufgabe ##
+Lesen Sie mittels einer JavaScript for-Schleife
+und der Funktion prompt fünf Werte des Benutzers ein.
+Schreiben Sie diese Werte in ein eindimensionales Array.
+Platzieren Sie anschließend im Dokument einen Button,
+beim Klick auf diesen, soll das Array ausgelesen werden
+und die Werte im Dokument angezeigt werden.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>TREFFpunkt 6: Aufgabe 2</title>
+    <script type="text/javascript">
+       var myArray = new Array(5);
+       function fillArray() {
+          for(var i=0; i<5; i++) {
+             myArray[i] = prompt("Bitte geben Sie einen Wert ein:","");
+          }
+          alert("Array ist gefüllt!");
+       }
+       function printArray() {
+          for(var i=0; i<myArray.length; i++) {
+             document.getElementById('ausgabe').innerHTML += myArray[i];
+          }
+       }
+    </script>
+  </head>
+  <body onload="fillArray();">
+    <button onclick="printArray();">Array ausgeben</button>
+    <div id="ausgabe"></div>
+  </body>
+</html>

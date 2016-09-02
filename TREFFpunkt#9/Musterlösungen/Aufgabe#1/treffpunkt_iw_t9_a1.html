@@ -1,0 +1,62 @@
+<!--
+## Aufgabe ##
+Erstellen Sie ein Dokument mit folgenden Eingabefeldern: Nachname, Vorname, Alter, Ist-Weiblich (Checkbox)
+und einem Speichern Button. Nach dem Klick auf Speichern sollen die Eingaben in einem Personen-Objekt
+persistiert werden. Dieses Personen-Objekt legen Sie wiederrum in einem Array ab. Geben Sie alle Personendaten
+aus, welche in den Personen-Objekten im Array persistiert sind. Setzen Sie dann das Formular zurück, so dass
+weitere Eingaben erfasst werden können.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>TREFFpunkt 9: Aufgabe 1</title>
+    <script type="text/javascript">
+        var personen = new Array();
+
+	function speichern() {
+           var person = new Person(document.getElementById('nachname').value,
+                                   document.getElementById('vorname').value,
+                                   document.getElementById('alter').value,
+                                   document.getElementById('weiblich').checked);
+           personen.push(person);
+           document.getElementById('ausgabe').innerHTML = "";
+           document.getElementById('personen-form').reset();
+           ausgabe();
+        }
+
+        function ausgabe() {
+           for(var i=0; i<personen.length; i++) {
+              document.getElementById('ausgabe').innerHTML += "<b>Person Nr. " + (i+1) + "</b><br>";
+              document.getElementById('ausgabe').innerHTML += "Nachname: " + personen[i].nachname + "<br>";
+              document.getElementById('ausgabe').innerHTML += "Vorname: " + personen[i].vorname + "<br>";
+              document.getElementById('ausgabe').innerHTML += "Alter: " + personen[i].alter + "<br>";
+              if(personen[i].weiblich == true) {
+                 document.getElementById('ausgabe').innerHTML += "Ist-weiblich: Ja <br><br>";
+              } else {
+                 document.getElementById('ausgabe').innerHTML += "Ist-weiblich: Nein <br><br>";
+              }
+           }
+        }
+
+        function Person(nachname, vorname, alter, weiblich) {
+           this.nachname = nachname;
+           this.vorname = vorname;
+           this.alter = alter;
+           this.weiblich = weiblich;
+        }
+    </script>
+  </head>
+  <body>
+    <form id="personen-form" action="#" method="get">
+       Nachname: <input type="text" id="nachname"><br>
+       Vorname: <input type="text" id="vorname"><br>
+       Alter: <input type="text" id="alter"><br>
+       Geschlecht: <input type="checkbox" id="weiblich" value="ja"> ist-weiblich<br>
+       <input type="submit" value="Speichern" onclick="speichern()">
+    </form>
+    <br><br>
+    <div id="ausgabe"></div>
+  </body>
+</html>

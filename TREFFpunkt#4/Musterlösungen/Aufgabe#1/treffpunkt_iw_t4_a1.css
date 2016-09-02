@@ -1,0 +1,38 @@
+body {
+   width:100%;
+   height:2000px;
+   margin:0;
+   padding:0;
+}
+
+.box {
+   width:250px;
+   height:250px;
+}
+
+#box1 {
+   position:static; /* Würde hier keine position angegeben werden,
+              ist der Standardwert automatisch position:static; */
+   background-color:#FFA54F;
+}
+
+#box2 {
+   position:relative;
+   background-color:#7B68EE;
+   left:10px;
+   top:10px;
+}
+
+#box3 {
+   position:absolute;
+   background-color:#00CDCD;
+   left:270px;
+   top:260px;
+}
+
+#box4 {
+   position:fixed;
+   background-color:#FF4040;
+   left:400px;
+   top:10px;
+}

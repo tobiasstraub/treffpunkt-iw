@@ -1,0 +1,56 @@
+<!--
+## Aufgabe ##
+Versuchen Sie herauszufinden, wie man die Felder, wie unten abgebildet, symmetrisch ausrichten könnte.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>TREFFpunkt 2: Aufgabe 2</title>
+    <style type="text/css">
+    	label {
+    		width:100px;
+	      	display:inline-block; /* Anmerkung: Alternativ könnte man hier auch float:left; nutzen.
+	      Ggf. muss dann aber margin angepasst werden */
+	    }
+    </style>
+  </head>
+  <body>
+    <form action="treffpunkt_iw_t2_a2.html" method="get">
+    <p>
+      Anrede:
+      <select name="anrede">
+      	<option value="frau">Frau</option>
+        <option value="herr">Herr</option>
+      </select>
+      </p>
+      <p>
+      	Weiblich <input type="radio" name="geschlecht" value="weiblich">
+        Männlich <input type="radio" name="geschlecht" value="maennlich">
+      </p>
+      <p>
+        <label for="vorname">Vorname:</label>
+        <input type="text" name="vorname">
+      </p>
+      <p>
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+      </p>
+      <p>
+        <label for="adresse">Adresse:</label>
+        <input type="text" name="adresse">
+      </p>
+      <p>
+        <label for="telefon">Telefon:</label>
+        <input type="tel" name="telefon">
+      </p>
+      <p>
+        <label for="email">E-Mail:</label>
+        <input type="email" name="email">
+      </p>
+      <input type="submit" value="Abschicken">
+      <input type="reset" value="Löschen">
+    </form>
+  </body>
+</html>

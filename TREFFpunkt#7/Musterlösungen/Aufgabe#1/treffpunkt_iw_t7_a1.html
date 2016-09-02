@@ -1,0 +1,43 @@
+<!--
+## Aufgabe ##
+Erstellen Sie ein JavaScript Programm. Deklarieren Sie ein zweidimensionales
+Array und initialisieren Sie dieses mit Fragen und
+Antworten. Ruft der Benutzer das Programm auf, so sollen nacheinander
+alle Fragen ausgegeben werden und jeweils auf Antwort des Nutzers
+gewartet werden (prompt). Beantwortet der Nutzer eine Frage richtig,
+so erhält er einen Punkt. Beantwortet der Nutzer eine Frage falsch,
+so erhält er keinen Punkt. Wurden alle Fragen beantwortet, soll die
+Gesamt-Punktzahl ausgegeben werden.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>TREFFpunkt 7: Aufgabe 1</title>
+    <script type="text/javascript">
+	var quiz = [
+                      ["Unter welcher Bezeichnung ist Nyan Cat noch bekannt?","Pop-Tart Cat"],
+                      ["Was bedeutet Nyan Cat wörtlich auf Deutsch?","Miau-Katze"],
+                      ["Von wem wurde die Nyan Cat ursprünglich erstellt?","Christopher Torres"]
+                   ];
+        var points = 0;
+        function ask() {
+           for(var i=0; i<quiz.length; i++) {
+              var answer = prompt(quiz[i][0],"");
+              if(answer == quiz[i][1]) {
+                 alert("Korrekt! - Du hast jetzt einen weiteren Punkt verdient und hast insgesamt " +
+                 ++points + " Punkt(e).");
+              } else {
+                 alert("Das war nicht korrekt! - Du erhälst dafür keinen Punkt. Du stehst bei " +
+                 points + " Punkt(e).");
+              }
+           }
+           alert("Das waren alle Fragen. Du hast insgesamt " + points + " Punkt(e) erspielt.");
+        }
+    </script>
+  </head>
+  <body onload="ask();">
+
+  </body>
+</html>

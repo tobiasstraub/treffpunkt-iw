@@ -1,0 +1,78 @@
+<!--
+## Aufgabe ##
+Erweitern Sie das in Aufgabe 1 erstelle Programm so,
+a) dass Nutzer nicht die Möglichkeit haben, durch 0 zu teilen.
+b) dass dem Nutzer seine letzten fünf Rechnungen angezeigt werden.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>TREFFpunkt 8: Aufgabe 2</title>
+    <script type="text/javascript">
+        var protokollCounter = 1;
+	function addieren() {
+           var zahl1 = document.getElementById('zahl1').value;
+           var zahl2 = document.getElementById('zahl2').value;
+           var ergebnis = parseInt(zahl1) + parseInt(zahl2);
+           document.getElementById('ergebnis').innerHTML = ergebnis;
+           protokoll(zahl1, zahl2, ergebnis, '+');
+        }
+
+        function subtrahieren() {
+           var zahl1 = document.getElementById('zahl1').value;
+           var zahl2 = document.getElementById('zahl2').value;
+           var ergebnis = parseInt(zahl1) - parseInt(zahl2);
+           document.getElementById('ergebnis').innerHTML = ergebnis;
+           protokoll(zahl1, zahl2, ergebnis, '-');
+        }
+
+        function multiplizieren() {
+           var zahl1 = document.getElementById('zahl1').value;
+           var zahl2 = document.getElementById('zahl2').value;
+           var ergebnis = parseInt(zahl1) * parseInt(zahl2);
+           document.getElementById('ergebnis').innerHTML = ergebnis;
+           protokoll(zahl1, zahl2, ergebnis, '*');
+        }
+
+        function dividieren() {
+           if(document.getElementById('zahl2').value > 0) {
+              var zahl1 = document.getElementById('zahl1').value;
+              var zahl2 = document.getElementById('zahl2').value;
+              var ergebnis = parseInt(zahl1) / parseInt(zahl2);
+              document.getElementById('ergebnis').innerHTML = ergebnis;
+              protokoll(zahl1, zahl2, ergebnis, '/');
+           } else {
+              alert("Sie können nicht durch 0 dividieren.");
+           }
+        }
+
+        function protokoll(zahl1, zahl2, ergebnis, zeichen) {
+           if(protokollCounter == 6) {
+              protokollCounter = 1;
+           }
+           document.getElementById('protokoll-'+protokollCounter).innerHTML =
+           zahl1 + " " + zeichen + " " + zahl2 + " " + " = " + ergebnis;
+           protokollCounter++;
+        }
+    </script>
+  </head>
+  <body>
+    <form action="#" method="get">
+       <input type="text" id="zahl1"> <input type="text" id="zahl2"> = <span id="ergebnis"></span><br>
+       <button onclick="addieren()">Addieren</button>
+       <button onclick="subtrahieren()">Subtrahieren</button>
+       <button onclick="multiplizieren()">Multiplizieren</button>
+       <button onclick="dividieren()">Dividieren</button>
+    </form><br>
+    Ihre letzten fünf Rechnungen:<br>
+    <ul style="list-style:none">
+      <li id="protokoll-1"></li>
+      <li id="protokoll-2"></li>
+      <li id="protokoll-3"></li>
+      <li id="protokoll-4"></li>
+      <li id="protokoll-5"></li>
+   </ul>
+  </body>
+</html>

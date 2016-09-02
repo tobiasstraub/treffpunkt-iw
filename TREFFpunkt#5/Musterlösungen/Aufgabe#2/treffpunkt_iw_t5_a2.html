@@ -1,0 +1,32 @@
+<!--
+## Aufgabe ##
+Wandeln Sie das in Aufgabe 1 erstellte JavaScript Programm so ab,
+dass erst nach Eingabe eines im Code definierten Passworts die
+Funktion ausgeführt werden kann. Gibt der Anwender ein falsches
+Passwort ein, soll dies mit einer entsprechenden Fehlermeldung
+quittiert werden.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>TREFFpunkt 5: Aufgabe 2</title>
+  </head>
+  <body>
+    <div id="ausgabe"></div>
+    <script type="text/javascript">
+	if(prompt("Bitte geben Sie das Passwort ein:","") == "geheim") {
+		var anzahlSternchen = prompt("Wie viele Sternchen sollen ausgegeben werden?","");
+		for(var i=0; i<anzahlSternchen; i++) {
+			if((i%40) == 0) {
+				document.getElementById('ausgabe').innerHTML += "<br>";
+			}
+			document.getElementById('ausgabe').innerHTML += "*";
+		}
+	} else {
+		alert("Das Passwort war leider nicht korrekt.");
+	}
+    </script>
+  </body>
+</html>
